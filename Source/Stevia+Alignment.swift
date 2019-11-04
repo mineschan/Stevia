@@ -353,6 +353,38 @@ public func alignRights(_ views: [UIView]) -> [UIView] {
     return views
 }
 
+/** Aligns leadings of an array of views
+ 
+ Example Usage:
+ ```
+ align(leadings: label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
+@discardableResult
+public func align(leadings views: [UIView]) -> [UIView] {
+    align(.leading, views: views)
+    return views
+}
+
+/** Aligns trailings of an array of views
+ 
+ Example Usage:
+ ```
+ align(trailings: label,field,button)
+ ```
+ 
+ - Returns: The array of views, enabling chaining,
+ 
+ */
+@discardableResult
+public func align(trailings views: [UIView]) -> [UIView] {
+    align(.trailing, views: views)
+    return views
+}
+
 @discardableResult
 public func align(_ attribute: NSLayoutConstraint.Attribute, views: [UIView]) -> [UIView] {
     for (i, v) in views.enumerated() where views.count > i+1 {

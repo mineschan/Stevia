@@ -151,8 +151,8 @@ public extension UIView {
     
     fileprivate func stack(_ axis: NSLayoutConstraint.Axis,
                            points: CGFloat = 0, v: UIView) -> UIView {
-        let a: NSLayoutConstraint.Attribute = axis == .vertical ? .top : .left
-        let b: NSLayoutConstraint.Attribute = axis == .vertical ? .bottom : .right
+        let a: NSLayoutConstraint.Attribute = axis == .vertical ? .top : .leading
+        let b: NSLayoutConstraint.Attribute = axis == .vertical ? .bottom : .trailing
         if let spv = superview {
             let c = constraint(item: v, attribute: a, toItem: self, attribute: b, constant: points)
             spv.addConstraint(c)
