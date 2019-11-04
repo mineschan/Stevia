@@ -186,20 +186,7 @@ public extension UIView {
      */
     @discardableResult
     func leading(_ p: SteviaPercentage) -> Self {
-        if let spv = superview {
-            if #available(iOS 9.0, *) {
-                let isRTL = UIView.userInterfaceLayoutDirection(for: semanticContentAttribute) == .rightToLeft
-                    || UIView.appearance().semanticContentAttribute == .forceRightToLeft
-                if isRTL {
-                    Leading == spv.Leading * (1-p.value/100)
-                } else {
-                    Leading == p.value % spv.Trailing
-                }
-            } else {
-                // Fallback on earlier versions
-            }
-        }
-        return self
+        fatalError("Percentage for leading not supported")
     }
     
     /** Sets the bottom margin for a view.
@@ -215,13 +202,6 @@ public extension UIView {
      */
     @discardableResult
     func trailing(_ p: SteviaPercentage) -> Self {
-        if let spv = superview {
-            if p.value == 100 {
-                Trailing == spv.Leading
-            } else {
-                Trailing == (100 - p.value) % spv.Trailing
-            }
-        }
-        return self
+        fatalError("Percentage for leading not supported")
     }
 }
